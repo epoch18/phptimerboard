@@ -7,7 +7,7 @@
 
 function GetSSOCallbackURL() {
     if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
-        $protcol = 'https://';
+        $protocol = 'https://';
     } else {
         $protocol = 'http://';
     }
