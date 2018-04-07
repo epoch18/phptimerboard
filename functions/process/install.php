@@ -61,7 +61,7 @@ function Install($db, $characterID, $character, $corporation, $useragent) {
             $corp = json_decode($result, true);
             $db->insert('Corporations', array(
                 'CorporationID' => $id,
-                'Name' => $corp['corporation_name'],
+                'Name' => $corp['name'],
                 'AllianceID' => $corporation['alliance_id'],
                 'AccessLevel' => 1
             ));
@@ -69,13 +69,13 @@ function Install($db, $characterID, $character, $corporation, $useragent) {
     } else {
         $db->insert('Corporations', array(
             'CorporationID' => $character['corporation_id'],
-            'Name' => $corporation['corporation_name'],
+            'Name' => $corporation['name'],
             'AccessLevel' => 1
         ));
     }
     
     printf("Added Character: " . $character['name'] . "<br>");
-    printf("Added Corporation: " . $corporation['corporation_name'] . "<br>");
+    printf("Added Corporation: " . $corporation['name'] . "<br>");
     if($alliance['alliance_name']) {
         printf("Added Alliance: " . $alliance['alliance_name'] . "<br>");
     }
