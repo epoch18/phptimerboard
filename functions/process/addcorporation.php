@@ -78,7 +78,7 @@ if($corporationId != NULL) {
     if($found == false) {
         $db->insert('Corporations', array(
             'CorporationID' => $corporationId,
-            'Name' => $corporation['corporation_name'],
+            'Name' => $corporation['name'],
             'AccessLevel' => 1
         ));
     }
